@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="job-hunt — a curated shortlist of GenAI and ML roles. Public board of filtered opportunities, never auto-applied." />
+  <meta name="theme-color" content="#0c1f2e" />
+  <title>job-hunt — curated GenAI &amp; ML shortlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a id="brand-link" class="brand" href="index.html">
+      <span class="brand-name">job-hunt</span>
+      <span class="brand-sub">curated shortlist</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Curated GenAI &amp; ML roles, shortlisted by signal—not noise.</h1>
+      <p class="hero-lead">
+        A living board of filtered opportunities worth a closer look. Public, honest, and never auto-applied.
+      </p>
+      <p id="target-line" class="hero-target" hidden></p>
+      <a class="cta" href="https://dong-xuyong.github.io/Resume/">View resume</a>
+    </section>
+
+    <section class="stats" aria-label="Pipeline stats">
+      <div class="stat">
+        <span class="stat-value" id="stat-found"></span>
+        <span class="stat-label">Found</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-filtered"></span>
+        <span class="stat-label">Filtered</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-shortlisted"></span>
+        <span class="stat-label">Shortlisted</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-scan-date"></span>
+        <span class="stat-label">Last scan</span>
+      </div>
+    </section>
+
+    <section class="board" aria-labelledby="board-heading">
+      <div class="board-toolbar">
+        <h2 id="board-heading" class="board-title">Shortlist</h2>
+        <div class="filters" role="group" aria-label="Filter by priority">
+          <button type="button" class="filter-btn is-active" data-priority="all">All</button>
+          <button type="button" class="filter-btn" data-priority="A">Priority A</button>
+          <button type="button" class="filter-btn" data-priority="B">Priority B</button>
+        </div>
+        <label class="search-label" for="search-input">
+          <span class="visually-hidden">Search roles</span>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search title, company, keywords…"
+            autocomplete="off"
+          />
+        </label>
+      </div>
+
+      <ul id="job-list" class="job-list" aria-live="polite"></ul>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p class="empty-title">No matching roles</p>
+        <p class="empty-copy">Try another priority filter or clear the search.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-meta">
+      Last scan: <span id="footer-scan"></span>
+    </p>
+    <p class="footer-disclaimer">
+      career-ops never auto-applies. This board is a curated shortlist for review only—applications stay human.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

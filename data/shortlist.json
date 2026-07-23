@@ -1,0 +1,250 @@
+{
+  "generated_at": "2026-07-23T23:18:09Z",
+  "scan_date": "2026-07-23",
+  "source": "career-ops",
+  "funnel": {
+    "found": 5855,
+    "filtered": 290,
+    "shortlisted": 23
+  },
+  "target": "GenAI / ML / RAG engineer (junior–mid), Guimarães / Portugal; open to Europe, Asia, Middle East.",
+  "disclaimer": "career-ops never auto-applies. Open each link, review, then apply yourself.",
+  "jobs": [
+    {
+      "id": "pleo-senior-genai-platform-engineer",
+      "priority": "A",
+      "company": "Pleo",
+      "title": "Senior GenAI Platform Engineer",
+      "location": "United Kingdom · Denmark · Portugal · Spain",
+      "note": "Portugal listed",
+      "urls": [
+        "https://jobs.ashbyhq.com/pleo/4bc838e7-d9c2-4d96-af9c-0d4760ad64f7"
+      ]
+    },
+    {
+      "id": "n8n-sr-ai-engineer-remote-europe",
+      "priority": "A",
+      "company": "n8n",
+      "title": "Sr AI Engineer / Remote - Europe",
+      "location": "Remote Europe incl. Portugal, Spain, NL, UK, …",
+      "note": "Portugal listed",
+      "urls": [
+        "https://jobs.ashbyhq.com/n8n/d195a389-6af5-4b95-82e5-2258953c7297"
+      ]
+    },
+    {
+      "id": "n26-ai-engineer",
+      "priority": "A",
+      "company": "N26",
+      "title": "AI Engineer",
+      "location": "Barcelona",
+      "urls": [
+        "https://n26.com/en-eu/careers/positions/8077098?gh_jid=8077098"
+      ]
+    },
+    {
+      "id": "hugging-face-open-source-machine-learning-engineer-emea-remote",
+      "priority": "A",
+      "company": "Hugging Face",
+      "title": "Open-Source Machine Learning Engineer - EMEA Remote",
+      "location": "Paris, France (Remote)",
+      "urls": [
+        "https://apply.workable.com/huggingface/jobs/view/81B46579FE"
+      ]
+    },
+    {
+      "id": "arize-ai-forward-deployed-ai-engineer-emea",
+      "priority": "A",
+      "company": "Arize AI",
+      "title": "Forward Deployed AI Engineer, EMEA",
+      "location": "Remote (EMEA)",
+      "urls": [
+        "https://job-boards.greenhouse.io/arizeai/jobs/5781408004"
+      ]
+    },
+    {
+      "id": "faculty-machine-learning-engineer",
+      "priority": "A",
+      "company": "Faculty",
+      "title": "Machine Learning Engineer",
+      "location": "UK - Remote",
+      "urls": [
+        "https://jobs.ashbyhq.com/faculty/168cb0e1-daea-42d5-ac09-e12a61cf72ca"
+      ]
+    },
+    {
+      "id": "synthesia-ml-platform-engineer",
+      "priority": "A",
+      "company": "Synthesia",
+      "title": "ML Platform Engineer",
+      "location": "Europe",
+      "urls": [
+        "https://jobs.ashbyhq.com/synthesia/c2d3d3a8-f7b8-45f5-ad89-dba6ac14625c"
+      ]
+    },
+    {
+      "id": "helsing-deployed-ai-engineer",
+      "priority": "A",
+      "company": "Helsing",
+      "title": "Deployed AI Engineer",
+      "location": "Berlin; London; Munich; Paris; Stockholm; Tallinn",
+      "urls": [
+        "https://helsing.ai/jobs/4516967101?gh_jid=4516967101"
+      ]
+    },
+    {
+      "id": "sierra-software-engineer-agent-spanish-speaking",
+      "priority": "A",
+      "company": "Sierra",
+      "title": "Software Engineer, Agent (Spanish speaking)",
+      "location": "London (Spanish + your PT/EN is a strong adjacent fit)",
+      "urls": [
+        "https://jobs.ashbyhq.com/sierra/aadfc0a0-93f6-454b-9767-c24793fa3eff"
+      ]
+    },
+    {
+      "id": "elevenlabs-forward-deployed-engineer-software-engineer-spain",
+      "priority": "A",
+      "company": "ElevenLabs",
+      "title": "Forward Deployed Engineer - Software Engineer - Spain",
+      "location": "Spain",
+      "urls": [
+        "https://jobs.ashbyhq.com/elevenlabs/7664e3c4-2336-4d1a-90cf-91d1268de10d"
+      ]
+    },
+    {
+      "id": "elevenlabs-enterprise-solutions-engineer-spain-france-netherlands",
+      "priority": "A",
+      "company": "ElevenLabs",
+      "title": "Enterprise Solutions Engineer - Spain / France / Netherlands",
+      "location": "Spain · France · Netherlands",
+      "urls": [
+        "https://jobs.ashbyhq.com/elevenlabs/b081fafb-3659-4bf6-8e87-eb5ccc3ff234",
+        "https://jobs.ashbyhq.com/elevenlabs/ce00fe7b-a93a-436b-bd5e-2eff87c48f23",
+        "https://jobs.ashbyhq.com/elevenlabs/3f10ccc9-56a9-40bf-b5f1-33ab5834ff4a"
+      ]
+    },
+    {
+      "id": "vapi-solutions-engineer-emea",
+      "priority": "A",
+      "company": "Vapi",
+      "title": "Solutions Engineer - EMEA",
+      "location": "Amsterdam · EMEA",
+      "urls": [
+        "https://jobs.ashbyhq.com/vapi/dce1928f-b432-4d6b-8c2f-b7c63c672310"
+      ]
+    },
+    {
+      "id": "celonis-lead-applied-ai-engineer",
+      "priority": "A",
+      "company": "Celonis",
+      "title": "Lead Applied AI Engineer",
+      "location": "Amsterdam, Netherlands",
+      "urls": [
+        "https://job-boards.greenhouse.io/celonis/jobs/7479634003?gh_jid=7479634003"
+      ]
+    },
+    {
+      "id": "pigment-senior-genai-engineer",
+      "priority": "A",
+      "company": "Pigment",
+      "title": "Senior GenAI Engineer",
+      "location": "France",
+      "urls": [
+        "https://jobs.lever.co/pigment/39662985-9160-45be-8363-352c69edeeef"
+      ]
+    },
+    {
+      "id": "diabolocom-ai-research-engineer-speech-and-conversational-ai",
+      "priority": "A",
+      "company": "Diabolocom",
+      "title": "AI Research Engineer (Speech & Conversational AI)",
+      "location": "Paris",
+      "urls": [
+        "https://jobs.eu.lever.co/diabolocom/e0df889a-6589-4b09-8b14-76b1511564f6"
+      ]
+    },
+    {
+      "id": "wayve-machine-learning-engineer",
+      "priority": "A",
+      "company": "Wayve",
+      "title": "Machine Learning Engineer",
+      "location": "Germany",
+      "urls": [
+        "https://wayve.firststage.co/jobs?gh_jid=8431120002"
+      ]
+    },
+    {
+      "id": "anthropic-applied-ai-engineer-beneficial-deployments",
+      "priority": "B",
+      "company": "Anthropic",
+      "title": "Applied AI Engineer, Beneficial Deployments",
+      "location": "London",
+      "urls": [
+        "https://job-boards.greenhouse.io/anthropic/jobs/5343697008"
+      ]
+    },
+    {
+      "id": "cohere-forward-deployed-engineer-agentic-platform-uk-europe",
+      "priority": "B",
+      "company": "Cohere",
+      "title": "Forward Deployed Engineer, Agentic Platform (UK/Europe)",
+      "location": "",
+      "urls": [
+        "https://jobs.ashbyhq.com/cohere/2d256112-b336-4539-8133-a0bf7f6698f0"
+      ]
+    },
+    {
+      "id": "palantir-forward-deployed-ai-engineer",
+      "priority": "B",
+      "company": "Palantir",
+      "title": "Forward Deployed AI Engineer",
+      "location": "London",
+      "urls": [
+        "https://jobs.lever.co/palantir/ff1029bd-bb6d-4d78-a03e-5f9744d0b798"
+      ]
+    },
+    {
+      "id": "deepgram-applied-ml-engineer",
+      "priority": "B",
+      "company": "Deepgram",
+      "title": "Applied ML Engineer",
+      "location": "USA Remote",
+      "note": "visa/geo risk",
+      "urls": [
+        "https://jobs.ashbyhq.com/deepgram/94ae2781-a85f-493a-86c1-ff85a9289355"
+      ]
+    },
+    {
+      "id": "wayve-machine-learning-engineer",
+      "priority": "B",
+      "company": "Wayve",
+      "title": "Machine Learning Engineer",
+      "location": "Germany",
+      "urls": [
+        "https://wayve.firststage.co/jobs?gh_jid=8431120002"
+      ]
+    },
+    {
+      "id": "qonto-staff-machine-learning-engineer-for-ai-product",
+      "priority": "B",
+      "company": "Qonto",
+      "title": "Staff Machine Learning Engineer for AI Product",
+      "location": "Paris",
+      "note": "senior stretch",
+      "urls": [
+        "https://jobs.lever.co/qonto/471e0021-d630-4cd1-81c3-2fb2e9dc253c"
+      ]
+    },
+    {
+      "id": "perplexity-mts-machine-learning-engineer-search",
+      "priority": "B",
+      "company": "Perplexity",
+      "title": "MTS Machine Learning Engineer, Search",
+      "location": "Belgrade / London / Berlin",
+      "urls": [
+        "https://jobs.ashbyhq.com/perplexity/0190699f-010b-44f2-8399-278899fef018"
+      ]
+    }
+  ]
+}
