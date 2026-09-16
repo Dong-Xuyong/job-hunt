@@ -2,64 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="job-hunt — a curated shortlist of GenAI and ML roles. Public board of filtered opportunities, never auto-applied." />
   <meta name="theme-color" content="#f6f4ef" />
   <title>job-hunt — curated GenAI &amp; ML shortlist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dong-ui/theme.css?v=3" />
-  <link rel="stylesheet" href="styles.css?v=3" />
   <script src="dong-ui/theme.js"></script>
+  <link rel="stylesheet" href="dong-ui/theme.css?v=insights2" />
+  <link rel="stylesheet" href="styles.css?v=insights2" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="page-bg" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header id="topbar" class="site-header nav-glass">
     <a id="brand-link" class="brand" href="index.html">
       <span class="brand-name">job-hunt</span>
-      <span class="brand-sub">curated shortlist</span>
     </a>
     <button type="button" data-dong-theme-toggle aria-label="Toggle color theme"></button>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-heading">
+  <main id="main" tabindex="-1">
+    <section class="learning-hero" aria-labelledby="hero-heading">
+      <span class="eyebrow">Career</span>
       <h1 id="hero-heading">Curated GenAI &amp; ML roles, shortlisted by signal—not noise.</h1>
       <p class="hero-lead">
         A living board of filtered opportunities worth a closer look. Public, honest, and never auto-applied.
       </p>
       <p id="target-line" class="hero-target" hidden></p>
-      <a class="cta" href="https://dong-xuyong.github.io/Resume/">View resume</a>
+      <div class="status-stats" aria-label="Pipeline stats">
+        <div>
+          <strong id="stat-found"></strong>
+          <span>Found</span>
+        </div>
+        <div>
+          <strong id="stat-filtered"></strong>
+          <span>Filtered</span>
+        </div>
+        <div>
+          <strong id="stat-shortlisted"></strong>
+          <span>Shortlisted</span>
+        </div>
+        <div>
+          <strong id="stat-scan-date"></strong>
+          <span>Last scan</span>
+        </div>
+      </div>
     </section>
 
-    <section class="stats" aria-label="Pipeline stats">
-      <div class="stat">
-        <span class="stat-value" id="stat-found"></span>
-        <span class="stat-label">Found</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="stat-filtered"></span>
-        <span class="stat-label">Filtered</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="stat-shortlisted"></span>
-        <span class="stat-label">Shortlisted</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="stat-scan-date"></span>
-        <span class="stat-label">Last scan</span>
-      </div>
-    </section>
+    <a class="cta" href="https://dong-xuyong.github.io/Resume/">
+      View resume
+      <span class="primary-arrow" aria-hidden="true">→</span>
+    </a>
 
     <section class="board" aria-labelledby="board-heading">
       <div class="board-toolbar">
         <h2 id="board-heading" class="board-title">Shortlist</h2>
-        <div class="filters" role="group" aria-label="Filter by priority">
-          <button type="button" class="filter-btn is-active" data-priority="all">All</button>
-          <button type="button" class="filter-btn" data-priority="A">Priority A</button>
-          <button type="button" class="filter-btn" data-priority="B">Priority B</button>
+        <div id="tab-toggle" class="filters" role="group" aria-label="Filter by priority">
+          <button type="button" class="seg active" data-priority="all">All</button>
+          <button type="button" class="seg" data-priority="A">Priority A</button>
+          <button type="button" class="seg" data-priority="B">Priority B</button>
         </div>
         <label class="search-label" for="search-input">
           <span class="visually-hidden">Search roles</span>
@@ -91,6 +95,6 @@
     </p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=insights2"></script>
 </body>
 </html>

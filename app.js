@@ -159,6 +159,7 @@
     priorityFilter = value || "all";
     els.filterBtns.forEach(function (btn) {
       var active = btn.getAttribute("data-priority") === priorityFilter;
+      btn.classList.toggle("active", active);
       btn.classList.toggle("is-active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
@@ -169,7 +170,9 @@
     els.filterBtns.forEach(function (btn) {
       btn.setAttribute(
         "aria-pressed",
-        btn.classList.contains("is-active") ? "true" : "false"
+        btn.classList.contains("active") || btn.classList.contains("is-active")
+          ? "true"
+          : "false"
       );
       btn.addEventListener("click", function () {
         setPriorityFilter(btn.getAttribute("data-priority") || "all");
