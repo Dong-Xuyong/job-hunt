@@ -2,16 +2,6 @@
    Colours, type, radius, and cards come from --dx-* tokens. */
 
 :root {
-  --bg: var(--dx-bg);
-  --text: var(--dx-text, var(--dx-fg));
-  --text-dim: var(--dx-muted);
-  --text-mute: var(--dx-muted);
-  --accent: var(--dx-accent, var(--dx-primary));
-  --accent-fg: var(--dx-primary-fg, #fff);
-  --radius: var(--dx-radius, 16px);
-  --font: var(--dx-font, "Encode Sans", system-ui, sans-serif);
-  --border: var(--dx-border, transparent);
-  --card: var(--dx-card);
   --prio-b: #8a5a00;
   --prio-b-soft: rgba(138, 90, 0, 0.14);
   --max: 720px;
@@ -36,8 +26,8 @@ body.dx {
   margin: 0;
   min-height: 100%;
   background: transparent;
-  color: var(--text);
-  font-family: var(--font);
+  color: var(--dx-text, var(--dx-fg));
+  font-family: var(--dx-font);
   -webkit-font-smoothing: antialiased;
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -60,8 +50,11 @@ body.dx {
   left: 0.5rem;
   z-index: 100;
   transform: translateY(-160%);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   border-radius: 8px;
-  background: var(--text);
+  background: var(--dx-fg, #0d0b08);
   color: var(--dx-bg, #f6f4ef);
   padding: 0.65rem 0.85rem;
   font-weight: 700;
@@ -94,17 +87,17 @@ body.dx {
 .dx-header .dong-theme-toggle__track {
   width: 44px;
   height: 28px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--dx-border);
   border-radius: 999px;
-  background: var(--dx-card-solid, var(--card));
+  background: var(--dx-card-solid, var(--dx-card));
 }
 
 .dx-header .dong-theme-toggle__knob {
-  background: var(--accent);
+  background: var(--dx-accent, var(--dx-primary));
 }
 
 .dx-header .dong-theme-toggle__icon.is-active {
-  color: var(--accent);
+  color: var(--dx-accent, var(--dx-primary));
 }
 
 main.dx-main {
@@ -128,7 +121,7 @@ main.dx-main {
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.2;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .hero-lead {
@@ -158,18 +151,18 @@ main.dx-main {
   width: 100%;
   min-height: 44px;
   padding: 0.75rem 1rem;
-  font-family: var(--font);
+  font-family: var(--dx-font);
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--accent-fg);
-  background: var(--accent);
+  color: var(--dx-accent-fg, var(--dx-primary-fg, #fff));
+  background: var(--dx-accent, var(--dx-primary));
   border: 0;
   border-radius: var(--dx-radius-sm, 10px);
   text-decoration: none;
 }
 
 .cta:hover {
-  color: var(--accent-fg);
+  color: var(--dx-accent-fg, var(--dx-primary-fg, #fff));
   filter: brightness(1.08);
 }
 
@@ -190,10 +183,10 @@ main.dx-main {
   min-width: 0;
   min-height: 62px;
   padding: 0.55rem 0.35rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--dx-border);
   border-radius: var(--dx-radius-sm, 10px);
-  background: var(--dx-card-solid, var(--card));
-  color: var(--text);
+  background: var(--dx-card-solid, var(--dx-card));
+  color: var(--dx-text, var(--dx-fg));
   text-align: center;
 }
 
@@ -201,7 +194,7 @@ main.dx-main {
   display: block;
   font-size: 1.05rem;
   line-height: 1.15;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .status-stats strong:empty::before {
@@ -231,7 +224,7 @@ main.dx-main {
   font-weight: 700;
   font-size: 1.08rem;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 /* Existing priority filters, drawn as shell tabs. */
@@ -252,8 +245,8 @@ main.dx-main {
 }
 
 .board .dx-tabs > .dx-tab[aria-current="page"] {
-  background: var(--dx-primary-soft, color-mix(in srgb, var(--accent) 16%, transparent));
-  color: var(--accent);
+  background: var(--dx-accent-soft, var(--dx-primary-soft));
+  color: var(--dx-accent, var(--dx-primary));
   box-shadow: none;
 }
 
@@ -269,9 +262,9 @@ main.dx-main {
   padding: 0.7rem 1rem;
   font: inherit;
   font-size: 1rem;
-  color: var(--text);
-  background: var(--dx-card-solid, var(--card));
-  border: 1px solid var(--border);
+  color: var(--dx-text, var(--dx-fg));
+  background: var(--dx-card-solid, var(--dx-card));
+  border: 1px solid var(--dx-border);
   border-radius: 999px;
   outline: none;
 }
@@ -281,7 +274,7 @@ main.dx-main {
 }
 
 .search-input:focus {
-  border-color: var(--accent);
+  border-color: var(--dx-accent, var(--dx-primary));
 }
 
 .job-list {
@@ -298,7 +291,7 @@ main.dx-main {
   display: block;
   width: 100%;
   min-width: 0;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
   overflow: hidden;
   overflow-wrap: anywhere;
   opacity: 0;
@@ -306,7 +299,7 @@ main.dx-main {
 }
 
 .job-card:hover {
-  border-color: var(--accent);
+  border-color: var(--dx-accent, var(--dx-primary));
 }
 
 .job-card__top {
@@ -323,13 +316,13 @@ main.dx-main {
   font-size: 0.95rem;
   letter-spacing: -0.02em;
   line-height: 1.35;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .job-card__company {
   margin: 0 0 0.35rem;
   font-size: 0.9rem;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .job-card__meta {
@@ -341,7 +334,7 @@ main.dx-main {
 .job-card__note {
   margin-top: 0.35rem;
   font-style: italic;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .job-card__actions {
@@ -359,17 +352,17 @@ main.dx-main {
   min-height: 44px;
   margin: 0;
   padding: 0.4rem 0.95rem;
-  font-family: var(--font);
+  font-family: var(--dx-font);
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--accent-fg);
-  background: var(--accent);
+  color: var(--dx-accent-fg, var(--dx-primary-fg, #fff));
+  background: var(--dx-accent, var(--dx-primary));
   border-radius: 999px;
 }
 
 .job-card__apply:hover {
-  color: var(--accent-fg);
+  color: var(--dx-accent-fg, var(--dx-primary-fg, #fff));
   filter: brightness(1.08);
 }
 
@@ -387,8 +380,8 @@ main.dx-main {
 }
 
 .badge--a {
-  color: var(--accent);
-  background: var(--dx-primary-soft, color-mix(in srgb, var(--accent) 16%, transparent));
+  color: var(--dx-accent, var(--dx-primary));
+  background: var(--dx-accent-soft, var(--dx-primary-soft));
 }
 
 .badge--b {
@@ -425,7 +418,7 @@ main.dx-main {
   margin: 0 0 0.25rem;
   font-weight: 700;
   font-size: 1rem;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 .empty-copy {
@@ -441,7 +434,7 @@ main.dx-main {
 .footer-meta {
   margin: 0 0 0.5rem;
   font-size: 0.85rem;
-  color: var(--text);
+  color: var(--dx-text, var(--dx-fg));
 }
 
 #footer-scan:empty::before {
@@ -460,7 +453,7 @@ main.dx-main {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--dx-ring, var(--accent));
+  outline: 2px solid var(--dx-accent, var(--dx-primary));
   outline-offset: 2px;
 }
 
