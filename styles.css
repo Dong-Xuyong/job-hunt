@@ -1,43 +1,25 @@
-/* job-hunt — Wiki Insights visual language, teal accent */
+/* job-hunt — layout on the shared Dong shell (/ui/shell.css).
+   Colours, type, radius, and cards come from --dx-* tokens. */
 
 :root {
-  --bg: #f6f4ef;
-  --bg-soft: #f7f7f5;
-  --bg-raised: #ffffff;
-  --border: #ebe8e1;
-  --text: #141414;
-  --text-dim: #4a4640;
-  --text-mute: #746f67;
-  --teal: #0f766e;
-  --teal-bright: #0b5f58;
-  --teal-soft: rgba(15, 118, 110, 0.14);
-  --amber: #8a5a00;
-  --amber-soft: rgba(138, 90, 0, 0.14);
-  --accent: var(--teal);
-  --accent-soft: rgba(15, 118, 110, 0.1);
-  --shadow: 0 8px 28px rgba(20, 18, 12, 0.08);
-  --radius: 14px;
-  --font: var(--font-sans, "Encode Sans", system-ui, sans-serif);
-  --max: 960px;
-  --space: 1rem;
+  --bg: var(--dx-bg);
+  --text: var(--dx-text, var(--dx-fg));
+  --text-dim: var(--dx-muted);
+  --text-mute: var(--dx-muted);
+  --accent: var(--dx-accent, var(--dx-primary));
+  --accent-fg: var(--dx-primary-fg, #fff);
+  --radius: var(--dx-radius, 16px);
+  --font: var(--dx-font, "Encode Sans", system-ui, sans-serif);
+  --border: var(--dx-border, transparent);
+  --card: var(--dx-card);
+  --prio-b: #8a5a00;
+  --prio-b-soft: rgba(138, 90, 0, 0.14);
+  --max: 720px;
 }
 
 html.dark {
-  --bg: #141414;
-  --bg-soft: #1c1c1c;
-  --bg-raised: #1f1f1f;
-  --border: #2e2e2e;
-  --text: #f3f0ea;
-  --text-dim: #c4bfb6;
-  --text-mute: #8c877e;
-  --teal: #3db8a8;
-  --teal-bright: #5ee0c8;
-  --teal-soft: rgba(61, 184, 168, 0.2);
-  --amber: #efb16f;
-  --amber-soft: rgba(196, 138, 74, 0.18);
-  --accent: var(--teal);
-  --accent-soft: rgba(61, 184, 168, 0.16);
-  --shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  --prio-b: #f0c48a;
+  --prio-b-soft: rgba(240, 196, 138, 0.18);
 }
 
 *,
@@ -46,28 +28,18 @@ html.dark {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
+  background-color: var(--dx-bg, #f6f4ef);
+}
+
+body.dx {
   margin: 0;
   min-height: 100%;
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
-}
-
-body {
   padding-bottom: env(safe-area-inset-bottom);
-}
-
-.page-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 92% 5%, var(--teal-soft), transparent 36%),
-    var(--bg);
 }
 
 .visually-hidden {
@@ -82,16 +54,6 @@ body {
   border: 0;
 }
 
-a {
-  color: var(--teal);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-}
-
-a:hover {
-  color: var(--teal-bright);
-}
-
 .skip-link {
   position: fixed;
   top: 0.5rem;
@@ -100,7 +62,7 @@ a:hover {
   transform: translateY(-160%);
   border-radius: 8px;
   background: var(--text);
-  color: var(--bg);
+  color: var(--dx-bg, #f6f4ef);
   padding: 0.65rem 0.85rem;
   font-weight: 700;
   text-decoration: none;
@@ -110,106 +72,57 @@ a:hover {
   transform: translateY(0);
 }
 
-/* —— Sticky glass header —— */
-
-#topbar,
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0.65rem 1rem 0.65rem 0.85rem;
-  padding-top: max(0.65rem, env(safe-area-inset-top));
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-#topbar .dong-theme-toggle,
-.site-header .dong-theme-toggle {
+/* Theme switch sits in the shell header. Hit target is 44px; the track stays a pill. */
+.dx-header .dong-theme-toggle {
   position: static;
+  top: auto;
+  right: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
-  margin-left: auto;
+  margin: 0;
+  padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-#topbar .dong-theme-toggle__track,
-.site-header .dong-theme-toggle__track {
+.dx-header .dong-theme-toggle__track {
   width: 44px;
   height: 28px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--bg-raised) 88%, transparent);
-  box-shadow: 0 1px 8px rgba(20, 18, 12, 0.08);
+  background: var(--dx-card-solid, var(--card));
 }
 
-#topbar .dong-theme-toggle__knob,
-.site-header .dong-theme-toggle__knob {
-  background: var(--teal);
+.dx-header .dong-theme-toggle__knob {
+  background: var(--accent);
 }
 
-#topbar .dong-theme-toggle__icon.is-active,
-.site-header .dong-theme-toggle__icon.is-active {
-  color: var(--teal);
+.dx-header .dong-theme-toggle__icon.is-active {
+  color: var(--accent);
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  text-decoration: none;
-  color: inherit;
+main.dx-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-
-.brand:hover {
-  color: inherit;
-}
-
-.brand-name {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-main {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1rem 1rem 2.5rem;
-}
-
-/* —— Hero —— */
 
 .eyebrow {
   display: block;
-  color: var(--text-mute);
+  color: var(--dx-muted);
   font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
-.learning-hero {
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) + 4px);
-  background:
-    radial-gradient(circle at 92% 5%, var(--teal-soft), transparent 36%),
-    var(--bg-raised);
-  box-shadow: var(--shadow);
-  padding: 1.2rem;
-  margin-bottom: 0.75rem;
-}
-
-.learning-hero h1 {
+#hero-heading {
   margin: 0.35rem 0 0.85rem;
   font-size: clamp(1.25rem, 4.5vw, 1.75rem);
   font-weight: 700;
@@ -223,14 +136,14 @@ main {
   max-width: 42rem;
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--text-dim);
+  color: var(--dx-muted);
 }
 
 .hero-target {
   margin: 0.65rem 0 0;
   max-width: 42rem;
   font-size: 0.85rem;
-  color: var(--text-mute);
+  color: var(--dx-muted);
   line-height: 1.5;
 }
 
@@ -244,26 +157,20 @@ main {
   justify-content: space-between;
   width: 100%;
   min-height: 44px;
-  margin-bottom: 1.5rem;
   padding: 0.75rem 1rem;
-  font-family: inherit;
+  font-family: var(--font);
   font-weight: 700;
   font-size: 0.92rem;
-  color: #fff;
-  background: var(--teal);
+  color: var(--accent-fg);
+  background: var(--accent);
   border: 0;
-  border-radius: var(--radius);
+  border-radius: var(--dx-radius-sm, 10px);
   text-decoration: none;
-  box-shadow: 0 8px 22px color-mix(in srgb, var(--teal) 28%, transparent);
 }
 
 .cta:hover {
-  color: #fff;
-  background: var(--teal-bright);
-}
-
-html.dark .cta {
-  color: #0d1412;
+  color: var(--accent-fg);
+  filter: brightness(1.08);
 }
 
 .cta .primary-arrow {
@@ -284,8 +191,8 @@ html.dark .cta {
   min-height: 62px;
   padding: 0.55rem 0.35rem;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--bg-soft) 82%, transparent);
+  border-radius: var(--dx-radius-sm, 10px);
+  background: var(--dx-card-solid, var(--card));
   color: var(--text);
   text-align: center;
 }
@@ -294,31 +201,26 @@ html.dark .cta {
   display: block;
   font-size: 1.05rem;
   line-height: 1.15;
+  color: var(--text);
 }
 
 .status-stats strong:empty::before {
   content: "—";
-  color: var(--text-mute);
+  color: var(--dx-muted);
   font-weight: 600;
 }
 
 .status-stats span {
   display: block;
   margin-top: 0.25rem;
-  color: var(--text-mute);
+  color: var(--dx-muted);
   font-size: 0.68rem;
   font-weight: 600;
 }
 
-/* —— Board / filters —— */
-
-.board {
-  margin: 0;
-}
-
 .board-toolbar {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
   align-items: center;
   margin-bottom: 1rem;
@@ -332,46 +234,33 @@ html.dark .cta {
   color: var(--text);
 }
 
-.filters,
-#tab-toggle {
+/* Existing priority filters, drawn as shell tabs. */
+.board .dx-tabs {
   display: grid;
-  grid-template-columns: 0.8fr 1.15fr 1.15fr;
-  min-width: 0;
-  background: var(--bg-soft);
-  border-radius: 999px;
-  padding: 3px;
-  gap: 2px;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.14fr) minmax(0, 1.14fr);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
-.filters .seg,
-#tab-toggle .seg {
-  border: none;
-  background: transparent;
-  color: var(--text-mute);
-  font: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.4rem 0.95rem;
-  border-radius: 999px;
-  cursor: pointer;
-  flex: 1;
+.board .dx-tabs > .dx-tab {
+  min-width: 0;
   min-height: 44px;
-  min-width: 0;
-  white-space: nowrap;
+  padding: 0 4px;
+  font-size: clamp(0.72rem, 3.2vw, 0.9rem);
 }
 
-.filters .seg.active,
-.filters .seg.is-active,
-#tab-toggle .seg.active,
-#tab-toggle .seg.is-active {
-  background: var(--bg-raised);
-  color: var(--text);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+.board .dx-tabs > .dx-tab[aria-current="page"] {
+  background: var(--dx-primary-soft, color-mix(in srgb, var(--accent) 16%, transparent));
+  color: var(--accent);
+  box-shadow: none;
 }
 
 .search-label {
   display: block;
   width: 100%;
+  min-width: 0;
 }
 
 .search-input {
@@ -379,23 +268,21 @@ html.dark .cta {
   min-height: 44px;
   padding: 0.7rem 1rem;
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
-  background: var(--bg-soft);
+  background: var(--dx-card-solid, var(--card));
   border: 1px solid var(--border);
   border-radius: 999px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: var(--text-mute);
+  color: var(--dx-muted);
 }
 
 .search-input:focus {
-  border-color: var(--teal);
+  border-color: var(--accent);
 }
-
-/* —— Job cards —— */
 
 .job-list {
   list-style: none;
@@ -404,26 +291,22 @@ html.dark .cta {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  min-width: 0;
 }
 
 .job-card {
   display: block;
   width: 100%;
-  padding: 0.9rem 1rem;
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  color: inherit;
+  min-width: 0;
+  color: var(--text);
   overflow: hidden;
+  overflow-wrap: anywhere;
   opacity: 0;
   animation: fade-in-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .job-card:hover {
-  border-color: color-mix(in srgb, var(--teal) 60%, var(--border));
-  box-shadow: var(--shadow);
+  border-color: var(--accent);
 }
 
 .job-card__top {
@@ -446,19 +329,19 @@ html.dark .cta {
 .job-card__company {
   margin: 0 0 0.35rem;
   font-size: 0.9rem;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .job-card__meta {
   margin: 0;
   font-size: 0.78rem;
-  color: var(--text-mute);
+  color: var(--dx-muted);
 }
 
 .job-card__note {
   margin-top: 0.35rem;
   font-style: italic;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .job-card__actions {
@@ -476,22 +359,18 @@ html.dark .cta {
   min-height: 44px;
   margin: 0;
   padding: 0.4rem 0.95rem;
+  font-family: var(--font);
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
-  color: #fff;
-  background: var(--teal);
+  color: var(--accent-fg);
+  background: var(--accent);
   border-radius: 999px;
-  box-shadow: none;
 }
 
 .job-card__apply:hover {
-  color: #fff;
-  background: var(--teal-bright);
-}
-
-html.dark .job-card__apply {
-  color: #0d1412;
+  color: var(--accent-fg);
+  filter: brightness(1.08);
 }
 
 .badge {
@@ -508,13 +387,13 @@ html.dark .job-card__apply {
 }
 
 .badge--a {
-  color: var(--teal);
-  background: var(--accent-soft);
+  color: var(--accent);
+  background: var(--dx-primary-soft, color-mix(in srgb, var(--accent) 16%, transparent));
 }
 
 .badge--b {
-  color: var(--amber);
-  background: var(--amber-soft);
+  color: var(--prio-b);
+  background: var(--prio-b-soft);
 }
 
 @keyframes fade-in-up {
@@ -532,15 +411,10 @@ html.dark .job-card__apply {
   animation-delay: calc(var(--i, 0) * 40ms);
 }
 
-/* —— Empty / footer —— */
-
 .empty-state {
-  padding: 3rem 1rem;
+  padding: 1.5rem 0.5rem 0.5rem;
   text-align: center;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-  color: var(--text-mute);
-  background: transparent;
+  color: var(--dx-muted);
 }
 
 .empty-state[hidden] {
@@ -557,56 +431,46 @@ html.dark .job-card__apply {
 .empty-copy {
   margin: 0;
   font-size: 0.8rem;
+  color: var(--dx-muted);
 }
 
 .site-footer {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1.25rem 1rem calc(2rem + env(safe-area-inset-bottom));
-  border-top: 1px solid var(--border);
+  margin: 0;
 }
 
 .footer-meta {
   margin: 0 0 0.5rem;
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 #footer-scan:empty::before {
   content: "—";
-  color: var(--text-mute);
+  color: var(--dx-muted);
 }
 
 .footer-disclaimer {
   margin: 0;
   max-width: 48ch;
   font-size: 0.8rem;
-  color: var(--text-mute);
+  color: var(--dx-muted);
   line-height: 1.5;
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--teal) 80%, var(--text));
+  outline: 2px solid var(--dx-ring, var(--accent));
   outline-offset: 2px;
 }
 
 @media (min-width: 720px) {
-  main {
-    padding: 1.25rem 1.5rem 2.75rem;
-  }
-
-  .learning-hero {
-    padding: 1.25rem;
-  }
-
   .status-stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .board-toolbar {
-    grid-template-columns: 1fr minmax(14rem, 20rem);
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
     grid-template-areas:
       "title title"
       "filters search";
@@ -617,22 +481,6 @@ input:focus-visible {
   .filters,
   #tab-toggle { grid-area: filters; }
   .search-label { grid-area: search; }
-}
-
-@media (max-width: 400px) {
-  .filters .seg,
-  #tab-toggle .seg {
-    font-size: 0.74rem;
-    padding: 0.4rem 0.2rem;
-  }
-
-  .status-stats {
-    gap: 0.3rem;
-  }
-
-  .status-stats span {
-    font-size: 0.61rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

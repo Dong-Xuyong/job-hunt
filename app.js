@@ -89,7 +89,7 @@
       if (!href) continue;
       var label = list.length > 1 ? "Apply " + (i + 1) : "Apply";
       parts.push(
-        '<a class="cta job-card__apply" href="' +
+        '<a class="cta dx-btn job-card__apply" href="' +
           escapeHtml(href) +
           '" target="_blank" rel="noopener noreferrer">' +
           escapeHtml(label) +
@@ -111,7 +111,7 @@
     }
 
     return (
-      '<li class="job-card" style="--i: ' +
+      '<li class="job-card dx-card" style="--i: ' +
       index +
       '" data-id="' +
       escapeHtml(job.id || "") +
@@ -162,6 +162,8 @@
       btn.classList.toggle("active", active);
       btn.classList.toggle("is-active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
+      if (active) btn.setAttribute("aria-current", "page");
+      else btn.removeAttribute("aria-current");
     });
     render();
   }

@@ -6,29 +6,32 @@
   <meta name="description" content="job-hunt — a curated shortlist of GenAI and ML roles. Public board of filtered opportunities, never auto-applied." />
   <meta name="theme-color" content="#f6f4ef" />
   <title>GenAI Job Shortlist</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="dong-ui/theme.js"></script>
   <link rel="stylesheet" href="dong-ui/theme.css?v=insights2" />
-  <link rel="stylesheet" href="styles.css?v=insights2" />
+  <link rel="stylesheet" href="/ui/shell.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=shell1" />
 </head>
-<body>
+<body class="dx">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="page-bg" aria-hidden="true"></div>
 
-  <header id="topbar" class="site-header nav-glass">
-    <a id="brand-link" class="brand" href="index.html">
-      <span class="brand-name">GenAI Job Shortlist</span>
+  <header class="dx-header">
+    <a class="dx-home" href="/" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
     </a>
-    <a class="dong-home-link" href="https://dong-xuyong.github.io/" aria-label="Back to all apps" title="All apps"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg></a>
-    <button type="button" data-dong-theme-toggle aria-label="Toggle color theme"></button>
+    <h1 class="dx-title">GenAI Job Shortlist</h1>
+    <div class="dx-actions">
+      <button type="button" data-dong-theme-toggle aria-label="Toggle color theme"></button>
+    </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <section class="learning-hero" aria-labelledby="hero-heading">
+  <main id="main" class="dx-main" tabindex="-1">
+    <section class="learning-hero dx-card" aria-labelledby="hero-heading">
       <span class="eyebrow">Career</span>
-      <h1 id="hero-heading">Curated GenAI &amp; ML roles, shortlisted by signal—not noise.</h1>
+      <h2 id="hero-heading">Curated GenAI &amp; ML roles, shortlisted by signal—not noise.</h2>
       <p class="hero-lead">
         A living board of filtered opportunities worth a closer look. Public, honest, and never auto-applied.
       </p>
@@ -53,18 +56,18 @@
       </div>
     </section>
 
-    <a class="cta" href="https://dong-xuyong.github.io/Resume/">
+    <a class="cta dx-btn" href="https://dong-xuyong.github.io/Resume/">
       View resume
       <span class="primary-arrow" aria-hidden="true">→</span>
     </a>
 
-    <section class="board" aria-labelledby="board-heading">
+    <section class="board dx-card" aria-labelledby="board-heading">
       <div class="board-toolbar">
         <h2 id="board-heading" class="board-title">Shortlist</h2>
-        <div id="tab-toggle" class="filters" role="group" aria-label="Filter by priority">
-          <button type="button" class="seg active" data-priority="all">All</button>
-          <button type="button" class="seg" data-priority="A">Priority A</button>
-          <button type="button" class="seg" data-priority="B">Priority B</button>
+        <div id="tab-toggle" class="filters dx-tabs" role="group" aria-label="Filter by priority">
+          <button type="button" class="seg dx-tab active" data-priority="all" aria-current="page">All</button>
+          <button type="button" class="seg dx-tab" data-priority="A">Priority A</button>
+          <button type="button" class="seg dx-tab" data-priority="B">Priority B</button>
         </div>
         <label class="search-label" for="search-input">
           <span class="visually-hidden">Search roles</span>
@@ -85,17 +88,17 @@
         <p class="empty-copy">Try another priority filter or clear the search.</p>
       </div>
     </section>
+
+    <footer class="site-footer dx-card">
+      <p class="footer-meta">
+        Last scan: <span id="footer-scan"></span>
+      </p>
+      <p class="footer-disclaimer">
+        career-ops never auto-applies. This board is a curated shortlist for review only—applications stay human.
+      </p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <p class="footer-meta">
-      Last scan: <span id="footer-scan"></span>
-    </p>
-    <p class="footer-disclaimer">
-      career-ops never auto-applies. This board is a curated shortlist for review only—applications stay human.
-    </p>
-  </footer>
-
-  <script src="app.js?v=insights2"></script>
+  <script src="app.js?v=shell1"></script>
 </body>
 </html>
